@@ -16,7 +16,7 @@ const AdviceBox = () => {
     setLoading(true);
 
     const advice = await (
-      await fetch("https://api.adviceslip.com/advice")
+      await fetch("https://api.adviceslip.com/advice", { cache: "no-cache" })
     ).json();
     setAdviceId(advice.slip.id);
     setAdviceText(advice.slip.advice);
